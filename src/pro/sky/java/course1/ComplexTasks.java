@@ -60,6 +60,7 @@ public class ComplexTasks {
 
         /*Task 9*/
         System.out.println(Arrays.toString(array));
+
         int firstIndex = 0;
         int lastIndex = array.length - 1;
 
@@ -73,6 +74,26 @@ public class ComplexTasks {
                 firstIndex++;
             } else {
                 lastIndex--;
+            }
+        }
+        System.out.println();
+
+        /*Task 2 Второй вариант.*/
+
+        for (int i = 0; i < array.length; i++) {
+            int key = sumResult - array[i];
+            int lo = i;
+            int hi = array.length - 1;
+            while (lo <= hi) {
+                int mid = lo + (hi - lo) / 2;
+                if (key > array[mid])
+                    lo = mid + 1;
+                else if (key < array[mid])
+                    hi = mid - 1;
+                else {
+                    System.out.println(array[i] + " " + key);
+                    break;
+                }
             }
         }
     }
